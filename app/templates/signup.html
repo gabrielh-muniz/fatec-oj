@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+<!-- Title -->
+{% block title %}Cadastrar-se{% endblock %}
+
+<!-- Head imports -->
+{% block head %}
+  <link
+    href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
+  <script 
+    src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  ></script>
+  <script 
+    src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='login.css') }}"
+  />
+{% endblock %}
+
+<!-- Main content -->
+{% block content %}
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first title">
+        Criar uma conta
+      </div>
+
+      <!-- Login Form -->
+      <form method="POST">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Nome">
+        <input type="password" id="password1" class="fadeIn third" name="password1" placeholder="Senha">
+        <input type="password" id="password2" class="fadeIn third" name="password2" placeholder="Confirmar senha">
+        <input type="submit" class="fadeIn fourth" value="Cadastrar-se">
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+<!-- Title -->
+{% block title %}Home{% endblock %}
+
+<!-- Head imports -->
+{% block head %}
+  <link 
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    id="bootstrap-css"
+  />
+  <script
+    src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"
+  ></script>
+  <script 
+    src="//code.jquery.com/jquery-1.11.1.min.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='home.css') }}"
+  />
+{% endblock %}
+
+<!-- content -->
+{% block content %}
+<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+<div id="wrapper">
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="fa fa-angle-down"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="fa fa-fw fa-user"></i> Editar perfil</a></li>
+          <li><a href="#"><i class="fa fa-fw fa-cog"></i> Alterar senha</a></li>
+          <li class="divider"></li>
+          <li><a href="/logout"><i class="fa fa-fw fa-power-off"></i> Sair</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#submenu-1">Menu 1</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="row" id="main" >
+        <div id="content">
+          <h1>Welcome {{ user.username }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
